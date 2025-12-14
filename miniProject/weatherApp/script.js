@@ -90,7 +90,7 @@ async function getWeather() {
 async function geoLocation(city) {
   console.log(city, id);
   const res = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${id}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${id}`
   );
   const data = await res.json();
   const lat = data[0].lat;
