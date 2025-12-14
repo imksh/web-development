@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="w-full p-3 text-center bg-primary text-white">
+      <h2>Weather</h2>
+    </header>
+
+    <main>
+      <div
+        class="container w-50 shadow p-4 rounded-2 my-5 box d-flex flex-column"
+      >
+        <div class="d-flex gap-3 align-items-center my-4 input">
+          <input
+            type="text"
+            name="city"
+            id="city"
+            placeholder="City Name"
+            class="form-control py-2 px-3"
+          />
+          <button class="btn btn-primary w-25" onclick="getWeather()" id="btn">
+            Get <span class="hide">Weather</span>
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2 bigDiv" id="animation">
+          <div id="lottie" class="lottieBig"></div>
+          <div id="loading" class="d-none lottieBig"></div>
+          <p id="name" class="fs-3 fw-bold text-primary"></p>
+        </div>
+        <div
+          id="weatherData"
+          class="mx-auto d-flex justify-content-between align-items-center w-75"
+        >
+          
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

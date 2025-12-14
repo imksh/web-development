@@ -1,0 +1,42 @@
+.box {
+  min-height: 60vh;
+}
+
+.lottieBig {
+  width: 200px;
+  aspect-ratio: 1;
+}
+
+.lottieSmall {
+  width: 100px;
+  aspect-ratio: 1;
+}
+
+.bigDiv {
+  margin: auto;
+}
+
+@media (max-width: 400px) {
+  .box {
+    width: 90% !important;
+    min-height: 65vh !important;
+    padding: 20px 10px !important;
+
+    img {
+      width: 120px;
+    }
+    #weatherData {
+      width: 100% !important;
+      margin: auto;
+    }
+  }
+  .input{
+    gap: 10px !important;
+    button{
+        width: 30% !important;
+    }
+    .hide{
+        display:none !important;
+    }
+  }
+}
