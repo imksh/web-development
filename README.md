@@ -28,9 +28,9 @@ A curated collection of my **frontend development tasks, exercises, and real min
 </tr>
 
 <tr>
-<td><a href="https://imksh.github.io/web-development/CSS/portfolio"><b>💼 CSS Portfolio</b></a></td>
-<td><a href="https://imksh.github.io/web-development/test/sevenDec"><b>🧪 Test Website</b></a></td>
-<td></td>
+<td><a href="https://imksh.github.io/web-development/assignments/portfolio"><b>💼 CSS Portfolio</b></a></td>
+<td><a href="https://imksh.github.io/web-development/test/sevenDec"><b>🧪 Institute Website</b></a></td>
+<td><a href="https://imksh.github.io/web-development/miniProject/weatherApp"><b>🧪 Weather App</b></a></td>
 </tr>
 </table>
 
@@ -52,23 +52,27 @@ A curated collection of my **frontend development tasks, exercises, and real min
 ## 📁 Contents
 
 ### 🔸 **HTML Tasks**
-- Forms, tables, semantic tags  
-- Basic layout building  
+
+- Forms, tables, semantic tags
+- Basic layout building
 
 ### 🔸 **CSS Tasks**
-- Flexbox & Grid  
-- Responsive pages  
-- Animations & transitions  
+
+- Flexbox & Grid
+- Responsive pages
+- Animations & transitions
 
 ### 🔸 **JavaScript Tasks**
-- DOM manipulation  
-- Event handling  
-- Form validation  
-- Mini logic-based projects  
+
+- DOM manipulation
+- Event handling
+- Form validation
+- Mini logic-based projects
 
 ### 🔸 **Mini Projects**
-- Real interfaces built using HTML, CSS & JS  
-- Each hosted on GitHub Pages  
+
+- Real interfaces built using HTML, CSS & JS
+- Each hosted on GitHub Pages
 
 ---
 
@@ -78,7 +82,7 @@ A curated collection of my **frontend development tasks, exercises, and real min
 ✔ Write clean, reusable, semantic code  
 ✔ Build responsive, modern UI layouts  
 ✔ Understand interactivity using JS  
-✔ Practice real-world mini-projects  
+✔ Practice real-world mini-projects
 
 ---
 
@@ -86,3 +90,4 @@ A curated collection of my **frontend development tasks, exercises, and real min
 
 ```bash
 git clone https://github.com/imksh/web-development.git
+```
