@@ -1,0 +1,14 @@
+.box {
+  min-height: 60vh;
+  width: 60%;
+}
+
+@media (max-width: 400px) {
+  .box {
+    min-height: 60vh;
+    width: 90%;
+    button {
+      width: auto !important;
+    }
+  }
+}

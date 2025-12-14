@@ -1,5 +1,3 @@
-
-
 function calculate() {
   const dob = document.getElementById("dob").value;
   const today = document.getElementById("today").value;

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="w-full p-3 text-center bg-primary text-white">
+      <h2>Registration Form</h2>
+    </header>
+
+    <main class="d-flex align-items-center justify-content-center">
+      <form
+        class="container w-50 my-5 p-4 rounded-4 d-flex flex-column gap-2 form "
+        onsubmit="handleSubmit(event)"
+      >
+        <h2 class="text-center text-primary fw-bold fs-1 my-2">
+          Enter your details
+        </h2>
+        <p class="fw-bold fs-5 mt-3">Personal Information:</p>
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="name" class="w-25 fw-bold">Full Name: </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-control w-75"
+              placeholder="eg. Karan Sharma"
+            />
+          </div>
+          <span class="error text-danger text-end pe-2" id="nameError"></span>
+        </div>
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="email" class="w-25 fw-bold">Email Address: </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form-control w-75"
+              placeholder="eg. karan@gmail.com"
+            />
+          </div>
+          <span class="error text-danger text-end pe-2" id="emailError"></span>
+        </div>
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="name" class="w-25 fw-bold">Mobile Number: </label>
+            <input
+              type="number"
+              name="number"
+              id="number"
+              class="form-control w-75"
+              placeholder="eg. 7295038835"
+            />
+          </div>
+          <span class="error text-danger text-end pe-2" id="numberError"></span>
+        </div>
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="dob" class="w-25 fw-bold">DOB: </label>
+            <input
+              type="date"
+              name="dob"
+              id="dob"
+              class="form-control w-auto me-auto"
+            />
+          </div>
+          <span class="error text-danger text-end pe-2" id="dobError"></span>
+        </div>
+        <p class="fw-bold fs-5 mt-5">Academic Details:</p>
+        <div class="name d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="qualifications" class="w-25 fw-bold">Qualifications: </label>
+            <select
+              name="qualifications"
+              id="qualifications"
+              class="me-auto p-1 rounded-2 form-select w-25"
+            >
+              <option value="">-Select-</option>
+              <option value="postGraduate">Post Graduate</option>
+              <option value="graduate">Graduate</option>
+              <option value="12">12th</option>
+              <option value="10">10th</option>
+            </select>
+          </div>
+          <span
+            class="error text-danger text-end pe-2"
+            id="qualificationsError"
+          ></span>
+        </div>
+
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="percent" class="w-25 fw-bold"
+              >Percentage / Grade:
+            </label>
+            <input
+              type="text"
+              name="percent"
+              id="percent"
+              class="form-control w-75"
+              placeholder="eg. Percentage: (0-100) or grade: (A-F)"
+            />
+          </div>
+          <span
+            class="error text-danger text-end pe-2"
+            id="percentError"
+          ></span>
+        </div>
+
+        <p class="fw-bold fs-5 mt-5">Course Information:</p>
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="course" class="w-25 fw-bold">Preffered Course: </label>
+            <select
+              name="course"
+              id="course"
+              class="me-auto p-1 rounded-2 form-select w-25"
+            >
+              <option value="">-Select-</option>
+              <option value="iit">IIT-JEE</option>
+              <option value="neet">NEET</option>
+              <option value="banking">Banking Exams</option>
+              <option value="upsc">UPSC</option>
+            </select>
+          </div>
+          <span class="error text-danger text-end pe-2" id="courseError"></span>
+        </div>
+
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="timing" class="w-25 fw-bold">Batch Timing: </label>
+            <select
+              name="timing"
+              id="timing"
+              class="me-auto p-1 rounded-2 form-select w-25"
+            >
+              <option value="">-Select-</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="Evening">Evening</option>
+              <option value="weekends">Weekends</option>
+            </select>
+          </div>
+          <span class="error text-danger text-end pe-2" id="timingError"></span>
+        </div>
+
+        <p class="fw-bold fs-5 mt-5">Address:</p>
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between">
+            <label for="address" class="w-25 fw-bold"
+              >Residential Address:
+            </label>
+            <textarea
+              name="address"
+              id="address"
+              class="input form-text w-75 p-2"
+              rows="5"
+              placeholder="eg. Mig D 54, Ayodhya Nagar"
+            ></textarea>
+          </div>
+          <span
+            class="error text-danger text-end pe-2"
+            id="addressError"
+          ></span>
+        </div>
+
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="city" class="w-25 fw-bold">City: </label>
+            <input
+              type="text"
+              name="city"
+              id="city"
+              class="form-control w-75"
+              placeholder="eg. Bhopal"
+            />
+          </div>
+          <span class="error text-danger text-end pe-2" id="cityError"></span>
+        </div>
+
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="pin" class="w-25 fw-bold">Pin Code: </label>
+            <input
+              type="text"
+              name="pin"
+              id="pin"
+              class="form-control w-75"
+              placeholder="eg. 852219"
+            />
+          </div>
+          <span class="error text-danger text-end pe-2" id="pinError"></span>
+        </div>
+
+        <p class="fw-bold fs-5 mt-5">Guardian Details:</p>
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="gaurdian" class="w-25 fw-bold">Guardian’s Name: </label>
+            <input
+              type="text"
+              name="gaurdian"
+              id="gaurdian"
+              class="w-75 form-control"
+              placeholder="eg. Father's Full name"
+            />
+          </div>
+          <span
+            class="error text-danger text-end pe-2"
+            id="guardianError"
+          ></span>
+        </div>
+
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="gaurdianNumber" class="w-25 fw-bold"
+              >Guardian’s Number:
+            </label>
+            <input
+              type="text"
+              name="gaurdianNumber"
+              id="gaurdianNumber"
+              class="w-75 form-control"
+              placeholder="eg. 9201274547"
+            />
+          </div>
+          <span
+            class="error text-danger text-end pe-2"
+            id="gaurdianNumberError"
+          ></span>
+        </div>
+
+        <p class="fw-bold fs-5 mt-5">Additional Information:</p>
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between align-items-center">
+            <label for="hearAbout" class="w-50 fw-bold"
+              >How did you hear about us?
+            </label>
+            <select
+              name="hearAbout"
+              id="hearAbout"
+              class="me-auto p-1 rounded-2 form-select w-25"
+            >
+              <option value="">-Select-</option>
+              <option value="friends">Friends</option>
+              <option value="ad">Online Ad</option>
+              <option value="newspaper">Newspaper</option>
+              <option value="social">Social Media</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <span
+            class="error text-danger text-end pe-2"
+            id="hearAboutError"
+          ></span>
+        </div>
+
+        <div class="inputDiv d-flex flex-column gap-1">
+          <div class="input d-flex justify-content-between">
+            <label for="requirement" class="w-50 fw-bold"
+              >Residential Address:
+            </label>
+            <textarea
+              name="requirement"
+              id="requirement"
+              class="input form-text w-50 p-2"
+              rows="5"
+              placeholder="eg. i would like to have...."
+            ></textarea>
+          </div>
+          <span
+            class="error text-danger text-end pe-2"
+            id="requirementError"
+          ></span>
+        </div>
+
+        <button class="btn btn-primary mx-auto my-3 w-25 py-2">Submit</button>
+      </form>
+
+      <img
+        src="./src/hero.png"
+        alt=""
+        height="550px"
+        width="550px"
+        class="mx-auto"
+      />
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

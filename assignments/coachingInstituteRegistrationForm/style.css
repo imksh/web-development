@@ -1,0 +1,13 @@
+header{
+    height: 10vh;
+}
+main{
+    max-height: 90vh;
+    
+}
+
+.form{
+    overflow: auto;
+    max-height: 90vh;
+    scrollbar-width: none;
+}
