@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electricity Bill</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="w-full p-3 text-center bg-primary text-white">
+      <h1 class="fw-bolder">Electricity Bill Calculator</h1>
+    </header>
+
+    <main>
+      <div
+        class="continer d-flex mainContainer gap-3 rounded-4 p-5 w-100 justify-content-center mb-5"
+      >
+        <div class="w-50 inputContainer">
+          <div class="d-flex flex-column align-items-start gap-1 w-75 mx-auto">
+            <label for="unit" class="fw-bold fs-5">Electricity units:</label>
+            <div class="inputDiv w-100">
+              <input
+                type="number"
+                min="0"
+                id="unit"
+                name="unit"
+                class="form-control"
+              />
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-around mx-auto mt-5">
+            <button
+              class="btn btn-primary py-3 w-25 mx-auto btns"
+              onclick="calculate()"
+            >
+              Calculate
+            </button>
+            <button
+              class="btn btn-danger py-3 w-25 mx-auto btns"
+              onclick="reset()"
+            >
+              Reset
+            </button>
+          </div>
+          <div class="d-flex justify-content-center align-items-center mt-5">
+            <img
+              src="./src/img.png"
+              alt=""
+              width="250px"
+              height="250px"
+              class=""
+            />
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-3 p-2 text-black shadow w-25 mx-auto my-5 p-4 res resDiv"
+        >
+          <div
+            class="d-flex justify-content-center align-items-center d-none"
+            id="load"
+          >
+            <i class="bi bi-arrow-clockwise fs-1 animate-rotate"></i>
+          </div>
+          <div class="d-block" id="result">
+            <h3 class="text-center">Total</h3>
+            <div class="d-flex justify-content-between">
+              <p>First 50 unit:</p>
+              <p>
+                <i class="bi bi-currency-rupee"></i><span id="first">0</span>
+              </p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p>51-200 unit:</p>
+              <p>
+                <i class="bi bi-currency-rupee"></i><span id="second">0</span>
+              </p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p>201-450 unit:</p>
+              <p>
+                <i class="bi bi-currency-rupee"></i><span id="third">0</span>
+              </p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p>Above 450 unit:</p>
+              <p>
+                <i class="bi bi-currency-rupee"></i><span id="fourth">0</span>
+              </p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p><strong>Subtotal:</strong></p>
+              <p>
+                <i class="bi bi-currency-rupee"></i><span id="subtotal">0</span>
+              </p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p><strong>Surcharge:</strong></p>
+              <p>
+                <i class="bi bi-currency-rupee"></i
+                ><span id="surcharge">0</span>
+              </p>
+            </div>
+            <div class="d-flex justify-content-between border-top py-3 mt-2">
+              <p><strong>Grand total:</strong></p>
+              <p>
+                <i class="bi bi-currency-rupee"
+                  ><span id="grandtotal">0</span></i
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

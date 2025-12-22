@@ -1,4 +1,4 @@
-const id = "346cb5b68ba7d1ed6fd157f4a3876e27";
+const id = "";
 
 const animation = lottie.loadAnimation({
   container: document.getElementById("lottie"),

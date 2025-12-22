@@ -1,0 +1,103 @@
+body {
+  background-image: linear-gradient(
+    to right bottom,
+    #0d6af6,
+    #0083fd,
+    #0099fb,
+    #00abf4,
+    #12bbeb
+  );
+  color: white;
+}
+header {
+  min-height: 10vh;
+}
+main {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animate-rotate {
+  animation: rotate 0.5s infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width:1000px) {
+  .mainContainer{
+    flex-direction: column !important;
+  }
+  .inputContainer{
+    width: 100% !important;
+  }
+  .resDiv{
+    width: 100% !important;
+  }
+  .btns{
+    width: auto !important;
+  }
+  img{
+    display: none;
+  }
+}
+
+
+.box {
+  width: 50%;
+  min-height: 70vh;
+}
+
+#service {
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 2px solid white;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.572);
+}
+
+.inputDiv {
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  i {
+    position: absolute;
+    z-index: 99;
+    color: black;
+    left: 5px;
+  }
+  input {
+    padding-left: 20px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .box {
+    width: 80%;
+    min-height: 75vh;
+  }
+}
+
+.display {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+@media (max-width: 500px) {
+  .box {
+    width: 90%;
+    min-height: 55vh;
+    padding: 30px 10px !important;
+    p,
+    label {
+      font-size: large !important;
+    }
+  }
+}
