@@ -19,7 +19,7 @@ main {
   align-items: center;
 }
 .animate-rotate {
-  animation: rotate 0.5s infinite;
+  animation: rotate 20s linear infinite;
 }
 @keyframes rotate {
   0% {

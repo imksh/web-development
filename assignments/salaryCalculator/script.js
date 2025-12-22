@@ -1,79 +1,41 @@
 function calculate() {
-  let unit = document.getElementById("unit").value;
+  let input = document.getElementById("input").value;
   reset();
-  document.getElementById("unit").value = unit;
+  document.getElementById("input").value = input;
   const first = document.getElementById("first");
   const second = document.getElementById("second");
   const third = document.getElementById("third");
-  const fourth = document.getElementById("fourth");
-  const subtotal = document.getElementById("subtotal");
-  const surcharge = document.getElementById("surcharge");
   const grandtotal = document.getElementById("grandtotal");
-
-  if (!unit) {
-    alert("Enter the Data");
+  const err = document.getElementById("error");
+  err.innerText = "";
+  if (!input) {
+    err.innerText = "Enter the Data";
     return;
   }
 
   const charge = [];
 
-  if (unit < 0) {
-    alert("Enter positive value only");
+  if (input < 0) {
+    err.innerText = "Enter positive value only";
     return;
   }
-  let bill = 0;
-  if (unit > 450) {
-    bill = 50 * 0.5;
-    charge.push(bill);
-    unit = unit - 50;
-    bill += 150 * 0.75;
-    charge.push(bill);
-    unit = unit - 150;
-    bill += unit * 1.2;
-    charge.push(bill);
-    unit = unit - 250;
-    bill += unit * 1.5;
-    charge.push(bill);
-  } else if (unit > 200) {
-    bill = 50 * 0.5;
-    charge.push(bill);
-    unit = unit - 50;
-    bill += 150 * 0.75;
-    charge.push(bill);
-    unit = unit - 150;
-    bill += unit * 1.2;
-    charge.push(bill);
-  } else if (unit > 50) {
-    bill = 50 * 0.5;
-    charge.push(bill);
-    unit = unit - 50;
-    bill += unit * 0.75;
-    charge.push(bill);
-  } else {
-    bill = unit * 0.5;
-    charge.push(bill);
-  }
+  const basic = Number(input);
 
-  const chargeVal = bill * 0.2;
-  const tempTotal = bill;
-  bill = bill + bill * 0.2;
+  const hra = basic * 0.2;
+  const da = basic * 0.1;
+  const gross = basic + hra + da;
 
-  first.innerText = charge.at(0)?.toFixed(2) || 0;
-  second.innerText = charge.at(1)?.toFixed(2) || 0;
-  third.innerText = charge.at(2)?.toFixed(2) || 0;
-  fourth.innerText = charge.at(3)?.toFixed(2) || 0;
-  surcharge.innerText = chargeVal?.toFixed(2) || 0;
-  subtotal.innerText = tempTotal?.toFixed(2) || 0;
-  grandtotal.innerText = bill?.toFixed(2) || 0;
+  first.innerText = basic.toFixed(2) || 0;
+  second.innerText = hra.toFixed(2) || 0;
+  third.innerText = da.toFixed(2) || 0;
+
+  grandtotal.innerText = gross?.toFixed(2) || 0;
 }
 
 function reset() {
-  document.getElementById("unit").value = 0;
+  document.getElementById("input").value = 0;
   document.getElementById("first").innerText = 0;
   document.getElementById("second").innerText = 0;
   document.getElementById("third").innerText = 0;
-  document.getElementById("fourth").innerText = 0;
-  document.getElementById("subtotal").innerText = 0;
-  document.getElementById("surcharge").innerText = 0;
   document.getElementById("grandtotal").innerText = 0;
 }
