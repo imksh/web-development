@@ -34,9 +34,9 @@ A curated collection of my **frontend development tasks, exercises, and real min
 </tr>
 
 <tr>
-<td><a href="https://imksh.github.io/web-development/assignments/electricityBillCalculator"><b>💼 CSS Portfolio</b></a></td>
-<td><a href="https://imksh.github.io/web-development/assignments/salaryCalculator"><b>🧪 Institute Website</b></a></td>
-<td><a href="https://imksh.github.io/web-development/assignments/travelCalculator"><b>🧪 Weather App</b></a></td>
+<td><a href="https://imksh.github.io/web-development/assignments/electricityBillCalculator"><b>Electricity Bill</b></a></td>
+<td><a href="https://imksh.github.io/web-development/assignments/salaryCalculator"><b>🧪 Salary Calculator</b></a></td>
+<td><a href="https://imksh.github.io/web-development/assignments/travelCalculator"><b>🧪 Travel Calculator</b></a></td>
 </tr>
 </table>
 
