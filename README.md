@@ -10,33 +10,33 @@ A curated collection of my **frontend development tasks, exercises, and real min
 
 <table align="center" style="margin:0 auto;">
 <tr>
-<td><a href="https://imksh.github.io/web-development/task/mapAndState"><b>🗺️ Map & States</b></a></td>
-<td><a href="https://imksh.github.io/web-development/miniProject/calculator"><b>🧮 Calculator</b></a></td>
-<td><a href="https://imksh.github.io/web-development/miniProject/ImageEditor"><b>🖼️ Image Editor</b></a></td>
+<td><a href="https://imksh.github.io/web-development/task/mapAndState"><b>Map & States</b></a></td>
+<td><a href="https://imksh.github.io/web-development/miniProject/calculator"><b>Calculator</b></a></td>
+<td><a href="https://imksh.github.io/web-development/miniProject/ImageEditor"><b>Image Editor</b></a></td>
 </tr>
 
 <tr>
-<td><a href="https://imksh.github.io/web-development/assignments/ageCalculator"><b>🎂 Age Calculator</b></a></td>
-<td><a href="https://imksh.github.io/web-development/assignments/tipCalculator"><b>💸 Tip Calculator</b></a></td>
-<td><a href="https://imksh.github.io/web-development/assignments/guessTheNumber"><b>🎯 Guess Number</b></a></td>
+<td><a href="https://imksh.github.io/web-development/assignments/ageCalculator"><b>Age Calculator</b></a></td>
+<td><a href="https://imksh.github.io/web-development/assignments/tipCalculator"><b>Tip Calculator</b></a></td>
+<td><a href="https://imksh.github.io/web-development/assignments/guessTheNumber"><b>Guess Number</b></a></td>
 </tr>
 
 <tr>
-<td><a href="https://imksh.github.io/web-development/javascript/passwordManager"><b>🔐 Password Manager</b></a></td>
-<td><a href="https://imksh.github.io/web-development/javascript/dice"><b>🎲 Dice Game</b></a></td>
-<td><a href="https://imksh.github.io/web-development/javascript/toDoList"><b>📝 ToDo List</b></a></td>
+<td><a href="https://imksh.github.io/web-development/javascript/passwordManager"><b> Password Manager</b></a></td>
+<td><a href="https://imksh.github.io/web-development/javascript/dice"><b>Dice Game</b></a></td>
+<td><a href="https://imksh.github.io/web-development/javascript/toDoList"><b>ToDo List</b></a></td>
 </tr>
 
 <tr>
-<td><a href="https://imksh.github.io/web-development/assignments/portfolio"><b>💼 CSS Portfolio</b></a></td>
-<td><a href="https://imksh.github.io/web-development/test/sevenDec"><b>🧪 Institute Website</b></a></td>
-<td><a href="https://imksh.github.io/web-development/miniProject/weatherApp"><b>🧪 Weather App</b></a></td>
+<td><a href="https://imksh.github.io/web-development/assignments/portfolio"><b>CSS Portfolio</b></a></td>
+<td><a href="https://imksh.github.io/web-development/test/sevenDec"><b>Institute Website</b></a></td>
+<td><a href="https://imksh.github.io/web-development/miniProject/weatherApp"><b>Weather App</b></a></td>
 </tr>
 
 <tr>
 <td><a href="https://imksh.github.io/web-development/assignments/electricityBillCalculator"><b>Electricity Bill</b></a></td>
-<td><a href="https://imksh.github.io/web-development/assignments/salaryCalculator"><b>🧪 Salary Calculator</b></a></td>
-<td><a href="https://imksh.github.io/web-development/assignments/travelCalculator"><b>🧪 Travel Calculator</b></a></td>
+<td><a href="https://imksh.github.io/web-development/assignments/salaryCalculator"><b>Salary Calculator</b></a></td>
+<td><a href="https://imksh.github.io/web-development/assignments/travelCalculator"><b> Travel Calculator</b></a></td>
 </tr>
 </table>
 
