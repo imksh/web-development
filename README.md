@@ -38,6 +38,9 @@ A curated collection of my **frontend development tasks, exercises, and real min
 <td><a href="https://imksh.github.io/web-development/assignments/salaryCalculator"><b>Salary Calculator</b></a></td>
 <td><a href="https://imksh.github.io/web-development/assignments/travelCalculator"><b> Travel Calculator</b></a></td>
 </tr>
+<tr>
+<td><a href="https://imksh.github.io/web-development/assignments/shoppingApp"><b>Shopping App</b></a></td>
+</tr>
 </table>
 
 ---

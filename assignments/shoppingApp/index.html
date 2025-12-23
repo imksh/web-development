@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zippi</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="fetchAllProduct();">
+    <header
+      class="w-full py-3 px-5 bg-primary text-white d-flex justify-content-between align-items-center"
+    >
+      <h2>Zippi</h2>
+      <ul
+        class="d-flex list-unstyled text-white align-items-center my-auto gap-3"
+      >
+        <li>
+          <a href="./index.html" class="text-white text-decoration-none text-muted fw-bold"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="./products.html" class="text-white text-decoration-none "
+            >Products</a
+          >
+        </li>
+        <li>
+          <a href="./cart.html" class="text-white text-decoration-none">Cart</a>
+        </li>
+        <li>
+          <a href="./contacts.html" class="text-white text-decoration-none"
+            >Contact</a
+          >
+        </li>
+         <li>
+          <a href="./about.html" class="text-white text-decoration-none"
+            >About</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <main class="">
+      <div class="hero bg-primary">
+        <div>
+          <div
+            class="d-flex container align-items-center searchDiv pt-5 w-75 mx-auto"
+          >
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search"
+              class="form-control rounded shadow py-3 rounded-5 px-5 mb-1"
+              oninput="search()"
+            />
+            <button class="btn" onclick="search()">
+              <i class="bi bi-search fs-4"></i>
+            </button>
+          </div>
+
+          <div id="searchList" class="position-absolute z-3 bg-white w-75 mx-auto p-5 rounded-4 d-none"></div>
+        </div>
+
+        <div
+          class="d-flex container justify-content-between p-5 align-items-center mt-4 text-white"
+        >
+          <div>
+            <span class="fs-1 fw-bolder d-block">Zippi</span>
+            <span class="d-block fw-bold" id="tagline">Everything You Love, One Place</span>
+            <a href="./products.html"
+              ><button class="btn bg-white mt-4 shopbtn">Shop Now</button></a
+            >
+          </div>
+          <div id="lottie" class="infinity"></div>
+        </div>
+
+        <div class="custom-shape-divider-bottom-1765084135">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </div>
+
+      <p class="fs-4 fw-bold text-primary mx-5 mt-5">Trending Products</p>
+      <div
+        class="w-100 d-flex overflow-auto py-4 pt-3 horizontalCardContainer p-5 gap-3"
+        id="homeCardContainer"
+      ></div>
+
+      <p class="fs-4 fw-bold text-primary mx-5 mt-5 px-5">Recently Launched</p>
+      <div
+        class="mx-auto container justify-content-between"
+        id="recentlyLaunched"
+      ></div>
+    </main>
+
+    <div
+      class="cart text-primary bg-primary-subtle rounded-5 d-flex justify-content-around align-items-center d-none"
+      id="cartContainer"
+    >
+      <div class="position-absolute" id="cartAnimate"></div>
+      <button class="btn text-primary cup z-2" onclick="clearCart()">
+        <i class="bi bi-trash fw-bolder fs-5"></i>
+      </button>
+      <span class="fw-bolder">Cart: <span id="cartNo"></span></span>
+      <button class="btn text-primary cup z-2" onclick="openItems()">
+        <i class="bi bi-chevron-right fw-bolder fs-4"></i>
+      </button>
+    </div>
+
+    <footer
+      class="d-flex justify-content-center align-items-center flex-column"
+    >
+      <div id="infinity" class="infinity"></div>
+      <p class="" style="color: gray">©️IdioticMinds | Crafted with ❤️</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

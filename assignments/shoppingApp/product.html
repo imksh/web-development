@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zippi</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="showProduct()">
+    <header
+      class="w-full py-3 px-5 bg-primary text-white d-flex justify-content-between align-items-center"
+    >
+      <h2>Zippi</h2>
+      <ul
+        class="d-flex list-unstyled text-white align-items-center my-auto gap-3"
+      >
+        <li>
+          <a href="./index.html" class="text-white text-decoration-none"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="./products.html" class="text-white text-decoration-none"
+            >Products</a
+          >
+        </li>
+        <li>
+          <a href="./cart.html" class="text-white text-decoration-none">Cart</a>
+        </li>
+        <li>
+          <a href="./contacts.html" class="text-white text-decoration-none"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a href="./about.html" class="text-white text-decoration-none"
+            >About</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <main
+      id="main"
+      class="min-vh-100 flex-column d-flex justify-content-center align-items-center"
+    >
+      <div class="container d-flex m-auto gap-5">
+        <div
+          class="flex h-100 justify-content-center align-items-center mx-5 px-5"
+        >
+          <img
+            src=""
+            alt=""
+            id="img"
+            width="300px"
+            class="object-fit-contain"
+          />
+        </div>
+        <div>
+          <h2 id="title"></h2>
+          <p>
+            <i class="bi bi-star-fill mx-2"></i><span id="rating"></span>/5
+            (<span id="count"></span>)
+          </p>
+          <p><strong>Category: </strong> <span id="category"></span></p>
+          <p id="desc"></p>
+          <p class="px-2 fs-5 d-block fw-bold text-primary primary">
+            Rs <span id="price"></span>
+          </p>
+          <div class="d-flex my-5 justify-content-between">
+            <a href="./products.html"
+              ><button class="btn btn-primary">All Products</button></a
+            >
+
+            <button class="btn btn-primary" id="productAdd">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div
+      class="cart text-primary bg-primary-subtle rounded-5 d-flex justify-content-around align-items-center d-none"
+      id="cartContainer"
+    >
+      <div class="position-absolute" id="cartAnimate"></div>
+      <button class="btn text-primary cup z-2" onclick="clearCart()">
+        <i class="bi bi-trash fw-bolder fs-5"></i>
+      </button>
+      <span class="fw-bolder">Cart: <span id="cartNo"></span></span>
+      <button class="btn text-primary cup z-2" onclick="openItems()">
+        <i class="bi bi-chevron-right fw-bolder fs-4"></i>
+      </button>
+    </div>
+
+    <div
+      id="loading"
+      class="d-flex justify-content-center flex-column align-items-center vh-100 h-100"
+    >
+      <div id="infinity" class="infinity m-auto"></div>
+    </div>
+
+    <div
+      class="cart text-primary bg-primary-subtle rounded-5 d-flex justify-content-around align-items-center d-none"
+      id="cartContainer"
+    >
+      <div class="position-absolute" id="cartAnimate"></div>
+      <button class="btn text-primary cup z-2" onclick="clearCart()">
+        <i class="bi bi-trash fw-bolder fs-5"></i>
+      </button>
+      <span class="fw-bolder">Cart: <span id="cartNo"></span></span>
+      <button class="btn text-primary cup z-2" onclick="openItems()">
+        <i class="bi bi-chevron-right fw-bolder fs-4"></i>
+      </button>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

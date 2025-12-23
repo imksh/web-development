@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zippi Products</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="fetchAllProduct();">
+   <header
+      class="w-full py-3 px-5 bg-primary text-white d-flex justify-content-between align-items-center"
+    >
+      <h2>Zippi</h2>
+      <ul
+        class="d-flex list-unstyled text-white align-items-center my-auto gap-3"
+      >
+        <li>
+          <a href="./index.html" class="text-white text-decoration-none"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="./products.html" class="text-white text-decoration-none text-muted fw-bold"
+            >Products</a
+          >
+        </li>
+        <li>
+          <a href="./cart.html" class="text-white text-decoration-none">Cart</a>
+        </li>
+        <li>
+          <a href="./contacts.html" class="text-white text-decoration-none"
+            >Contact</a
+          >
+        </li>
+         <li>
+          <a href="./about.html" class="text-white text-decoration-none"
+            >About</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <main class="d-flex vh-100 overflow-hidden" id="main">
+      <div
+        class="w-25 shadow p-4 flex-column d-flex h-100 overflow-auto min-h-0"
+      >
+        <h2 class="fs-5">Fashion & Apparel</h2>
+        <ul class="list-unstyled">
+          <li><button onclick="handleCategory('Men’s Clothing')" class="btn">Men’s Clothing</button></li>
+          <li><button onclick="handleCategory('Women’s Clothing')" class="btn">Women’s Clothing</button></li>
+          <li><button onclick="handleCategory('Kids’ Wear')" class="btn">Kids’ Wear</button></li>
+          <li><button onclick="handleCategory('Footwear')" class="btn">Footwear</button></li>
+          <li><button onclick="handleCategory('Accessories')" class="btn">Accessories</button></li>
+        </ul>
+        <h2 class="fs-5">Electronics</h2>
+        <ul class="list-unstyled">
+          <li><button onclick="handleCategory('Mobiles')" class="btn">Mobiles</button></li>
+          <li><button onclick="handleCategory('Laptops')" class="btn">Laptops</button></li>
+          <li><button onclick="handleCategory('Tablets')" class="btn">Tablets</button></li>
+          <li><button onclick="handleCategory('Headphones')" class="btn">Headphones</button></li>
+          <li><button onclick="handleCategory('Smartwatches')" class="btn">Smartwatches</button></li>
+        </ul>
+        <h2 class="fs-5">Home & Living</h2>
+        <ul class="list-unstyled">
+          <li><button onclick="handleCategory('Furniture')" class="btn">Furniture</button></li>
+          <li><button onclick="handleCategory('Home Décor')" class="btn">Home Décor</button></li>
+          <li><button onclick="handleCategory('Lighting')" class="btn">Lighting</button></li>
+          <li><button onclick="handleCategory('Kitchenware')" class="btn">Kitchenware</button></li>
+        </ul>
+        <h2 class="fs-5">Beauty & Personal Care</h2>
+        <ul class="list-unstyled">
+          <li><button onclick="handleCategory('Skincare')" class="btn">Skincare</button></li>
+          <li><button onclick="handleCategory('Haircare')" class="btn">Haircare</button></li>
+          <li><button onclick="handleCategory('Grooming')" class="btn">Grooming</button></li>
+          <li><button onclick="handleCategory('Fragrances')" class="btn">Fragrances</button></li>
+        </ul>
+        <h2 class="fs-5">Health & Wellness</h2>
+        <ul class="list-unstyled">
+          <li><button onclick="handleCategory('Fitness Equipment')" class="btn">Fitness Equipment</button></li>
+          <li><button onclick="handleCategory('Yoga Accessories')" class="btn">Yoga Accessories</button></li>
+          <li><button onclick="handleCategory('Supplements')" class="btn">Supplements</button></li>
+        </ul>
+        <h2 class="fs-5">Books & Stationery</h2>
+        <ul class="list-unstyled">
+          <li><button onclick="handleCategory('Books')" class="btn">Books</button></li>
+          <li><button onclick="handleCategory('Notebooks')" class="btn">Notebooks</button></li>
+          <li><button onclick="handleCategory('Office Supplies')" class="btn">Office Supplies</button></li>
+        </ul>
+        <h2 class="fs-5">Sports & Outdoors</h2>
+        <ul class="list-unstyled">
+          <li><button onclick="handleCategory('Sports Gear')" class="btn">Sports Gear</button></li>
+          <li><button onclick="handleCategory('ym Equipment')" class="btn">Gym Equipment</button></li>
+          <li><button onclick="handleCategory('Outdoor Accessories')" class="btn">Outdoor Accessories</button></li>
+        </ul>
+        <h2 class="fs-5">Toys & Games</h2>
+        <ul class="list-unstyled">
+          <li><button onclick="handleCategory('Educational Toys')" class="btn">Educational Toys</button></li>
+          <li><button onclick="handleCategory('Board Games')" class="btn">Board Games</button></li>
+          <li><button onclick="handleCategory('Video Games')" class="btn">Video Games</button></li>
+        </ul>
+        <h2 class="fs-5">Bags & Luggage</h2>
+        <ul class="list-unstyled">
+          <li><button onclick="handleCategory('Backpacks')" class="btn">Backpacks</button></li>
+          <li><button onclick="handleCategory('Handbags')" class="btn">Handbags</button></li>
+          <li><button onclick="handleCategory('Suitcases')" class="btn">Suitcases</button></li>
+        </ul>
+        <h2 class="fs-5">Automotive</h2>
+        <ul class="list-unstyled">
+          <li><button onclick="handleCategory('Bike Accessories')" class="btn">Bike Accessories</button></li>
+          <li><button onclick="handleCategory('Car Accessories')" class="btn">Car Accessories</button></li>
+        </ul>
+        <h2 class="fs-5">Jewellery & Watches</h2>
+        <ul class="list-unstyled">
+          <li><button onclick="handleCategory('Fashion Jewellery')" class="btn">Fashion Jewellery</button></li>
+          <li><button onclick="handleCategory('Watches')" class="btn">Watches</button></li>
+        </ul>
+      </div>
+      <div class="w-75 flex-column d-flex h-100 overflow-auto">
+        <div
+          class="position-relative"
+        >
+          <div
+            class="d-flex container align-items-center searchDiv pt-5 w-75 mx-auto"
+          >
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search"
+              class="form-control rounded shadow py-3 rounded-5 px-5 mb-1"
+              oninput="search()"
+            />
+            <button class="btn" onclick="search()">
+              <i class="bi bi-search fs-4"></i>
+            </button>
+          </div>
+          <div
+            id="searchList"
+            class=" z-3 bg-white w-75 mx-auto p-5 rounded-4 d-none"
+          ></div>
+        </div>
+        <p class="fs-4 fw-bold text-primary mx-5 mt-5">Trending 🔥</p>
+        <div
+          class="w-100 d-flex overflow-auto py-4 pt-3 horizontalCardContainer"
+          id="horizontalCardContainer"
+        ></div>
+
+        <p class="fs-4 fw-bold text-primary mx-5 mt-5">Top Picks</p>
+        <div
+          class="w-100 py-4 verticalCardContainer justify-content-around"
+          id="verticalCardContainer"
+        ></div>
+
+        <p class="fs-4 fw-bold text-primary mx-5 mt-5">For You</p>
+        <div
+          class="w-100 py-4 d-flex flex-column"
+          id="largeCardContainer"
+        ></div>
+      </div>
+    </main>
+
+    <div
+      id="loading"
+      class="d-flex justify-content-center align-items-center vh-100 h-100"
+    >
+      <div id="infinity" class="infinity m-auto"></div>
+    </div>
+
+    <div
+      class="cart text-primary bg-primary-subtle rounded-5 d-flex justify-content-around align-items-center d-none"
+      id="cartContainer"
+    >
+      <div class="position-absolute" id="cartAnimate"></div>
+      <button class="btn text-primary cup z-2" onclick="clearCart()">
+        <i class="bi bi-trash fw-bolder fs-5"></i>
+      </button>
+      <span class="fw-bolder">Cart: <span id="cartNo"></span></span>
+      <button class="btn text-primary cup z-2" onclick="openItems()">
+        <i class="bi bi-chevron-right fw-bolder fs-4"></i>
+      </button>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
