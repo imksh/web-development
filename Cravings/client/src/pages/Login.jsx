@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
-  const { setUser, setIsLogin } = useAuth();
+  const { setUser, setIsLogin, setRole } = useAuth();
   const navigate = useNavigate();
   const [data, setData] = useState({
     email: "",
@@ -41,7 +41,25 @@ const Login = () => {
       setIsLogin(true);
       sessionStorage.setItem("CravingsUser", JSON.stringify(res.data.data));
       handleReset(e);
-      navigate("/user-dashboard");
+      switch (res.data.data.role) {
+        case "manager":
+          setRole("manager");
+          navigate("/resturant-dashboard");
+          break;
+
+        case "customer":
+          setRole("customer");
+          navigate("/user-dashboard");
+          break;
+
+        case "partner":
+          setRole("partner");
+          navigate("/rider-dashboard");
+          break;
+
+        default:
+          break;
+      }
       setShowAnimation(true);
     } catch (error) {
       console.log("Error in login: ", error);

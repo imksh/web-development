@@ -3,9 +3,11 @@ import { motion } from "motion/react";
 import { useAuth } from "../../../context/AuthContext";
 import Edit from "../../../assets/animations/edit.json";
 import Lottie from "lottie-react";
+import api from "../../../config/Api";
+import { toast } from "react-hot-toast";
 
 const EditProfileModal = ({ onClose }) => {
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
   const [data, setData] = useState({
     name: user.name,
     email: user.email,
@@ -19,17 +21,40 @@ const EditProfileModal = ({ onClose }) => {
     setData((item) => ({ ...item, [name]: value }));
   };
 
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setIsLoading(true);
+      const res = await api.put("/user/update", data);
+      setUser(res.data.data);
+      sessionStorage.setItem("CravingsUser", JSON.stringify(res.data.data));
+      toast.success(res.data.message);
+    } catch (error) {
+      console.log("Error in updaing user:", error);
+      toast.error(error?.response?.data?.message);
+    } finally {
+      setIsLoading(false);
+      onClose();
+    }
+  };
+
   return (
     <div className="bg-black/70 fixed inset-0 flex justify-center items-center z-99">
       <div className="p-8 rounded-2xl bg-gradient  h-[60%] w-[70%] overflow-y-auto relative">
         <div className="flex relative items-center justify-center w-fit  mx-auto">
-          <Lottie animationData={Edit} className="w-12 absolute left-0 -translate-x-[100%] -top-5 text-(--primary)" />
+          <Lottie
+            animationData={Edit}
+            className="w-12 absolute left-0 -translate-x-[100%] -top-3 text-(--primary)"
+          />
           <h2 className="text-2xl font-bold text-(--primary) text-center mb-4">
             Edit Profile
           </h2>
         </div>
 
-        <form className="w-[50%] mx-auto gap-4 flex flex-col">
+        <form
+          className="w-[50%] mx-auto gap-4 flex flex-col"
+          onSubmit={handleSubmit}
+        >
           <div className="w-full flex flex-col">
             <input
               type="text"
@@ -84,8 +109,8 @@ const EditProfileModal = ({ onClose }) => {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            onClick={onClose}
             className="w-fit px-6 py-2 rounded-lg mx-auto bg-blue-500 text-white text-lg font-extrabold hover:bg-blue-700 cursor-pointer "
+            type="submit"
           >
             Update
           </motion.button>

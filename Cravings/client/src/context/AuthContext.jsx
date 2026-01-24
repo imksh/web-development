@@ -7,12 +7,14 @@ export const AuthProvider = (props) => {
     JSON.parse(sessionStorage.getItem("CravingsUser")) || "",
   );
   const [isLogin, setIsLogin] = useState(!!user);
+  const [role, setRole] = useState(user?.role || "");
 
   useEffect(() => {
     setIsLogin(!!user);
+    setRole(user?.role || "");
   }, [user]);
 
-  const value = { user, setUser, isLogin, setIsLogin };
+  const value = { user, setUser, isLogin, setIsLogin, role, setRole };
 
   return (
     <AuthContext.Provider value={value}>{props.children}</AuthContext.Provider>

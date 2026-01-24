@@ -16,6 +16,7 @@ const Register = () => {
     email: "",
     phone: "",
     password: "",
+    role: "",
   });
   const [confirm, setConfirm] = useState("");
   const [showPass, setShowPass] = useState(false);
@@ -73,6 +74,9 @@ const Register = () => {
     if (!/^[6-9]\d{9}$/.test(data.phone)) {
       error.number = "Enter a 10-digit Indian mobile number";
     }
+    if (!data.role) {
+      error.role = "Plese select your role";
+    }
 
     setErr(error);
     if (Object.keys(error).length > 0) {
@@ -88,6 +92,7 @@ const Register = () => {
       email: "",
       phone: "",
       password: "",
+      role: "",
     });
 
     setConfirm("");
@@ -109,6 +114,54 @@ const Register = () => {
           Create Account
         </h2>
         <div className="w-full flex flex-col mt-4 gap-4">
+          <div className="w-full flex flex-col">
+            <div className="w-full grid grid-cols-[40%_60%] md:flex md:flex-row  md:justify-between md:items-center">
+              <label
+                htmlFor=""
+                className="text-(--primary) text-3xl font-extrabold"
+              >
+                I am a
+              </label>
+              <div className="flex flex-col md:flex-row  md:justify-around md:items-center grow">
+                <div className="flex gap-1.5">
+                  <input
+                    type="radio"
+                    name="role"
+                    id="customer"
+                    value="customer"
+                    onChange={handleChange}
+                    checked={data.role === "customer"}
+                  />
+                  <label htmlFor="customer">Customer</label>
+                </div>
+                <div className="flex gap-1.5">
+                  <input
+                    type="radio"
+                    name="role"
+                    id="partner"
+                    value="partner"
+                    onChange={handleChange}
+                    checked={data.role === "partner"}
+                  />
+                  <label htmlFor="partner">Delivery Partner</label>
+                </div>
+                <div className="flex gap-1.5">
+                  <input
+                    type="radio"
+                    name="role"
+                    id="manager"
+                    value="manager"
+                    onChange={handleChange}
+                    checked={data.role === "manager"}
+                  />
+                  <label htmlFor="manager">Resturant Manager</label>
+                </div>
+              </div>
+            </div>
+            <span className="text-red-500 text-[12px] ml-auto mr-2">
+              {err.role}
+            </span>
+          </div>
           <div className="w-full flex flex-col">
             <input
               type="text"

@@ -36,7 +36,7 @@ const UserDashboard = () => {
             initial={{ width: "5%" }}
             whileHover={{ width: "20%" }}
             transition={{ duration: 0.5 }}
-            className={`shadow-lg fixed h-full min-w-[70px] z-50 shrink-0 hide-scrollbar border-r border-slate-300 header-gradient`}
+            className={`shadow-lg fixed h-full min-w-[70px] z-50 shrink-0 hide-scrollbar border-r border-slate-300 header-gradient overflow-hidden`}
             onMouseEnter={() => setShow(true)}
             onMouseLeave={() => setShow(false)}
           >
@@ -46,7 +46,7 @@ const UserDashboard = () => {
       ) : (
         <UserTopBar active={active} setActive={setActive} show={show} />
       )}
-      <div className={`w-[95%] ml-auto overflow-y-auto `}>
+      <div className={`w-full sm:w-[95%] ml-auto overflow-y-auto `}>
         {active === "overview" && <UserOverview />}
         {active === "profile" && <UserProfile />}
         {active === "orders" && <UserOrders />}

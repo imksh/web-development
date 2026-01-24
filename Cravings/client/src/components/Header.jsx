@@ -15,7 +15,6 @@ const Header = () => {
   const lastScrollY = React.useRef(0);
   const navigate = useNavigate();
   const location = useLocation().pathname;
-  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +33,26 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavigate = () => {
+    switch (user?.role) {
+      case "manager":
+        navigate("/resturant-dashboard");
+        break;
+
+      case "customer":
+        navigate("/user-dashboard");
+        break;
+
+      case "partner":
+        navigate("/rider-dashboard");
+        break;
+
+      default:
+        navigate("/");
+        break;
+    }
+  };
 
   return (
     <motion.div
@@ -112,9 +131,11 @@ const Header = () => {
           <div className="hidden md:flex list-none gap-3 items-center  my-auto">
             {isLogin ? (
               <motion.button
-                onClick={() => navigate("/user-dashboard")}
+                onClick={handleNavigate}
                 className={`w-10 h-10 border-2 rounded-full bg-(--accent) text-white text-xl cursor-pointer  ${
-                  location === "/user-dashboard"
+                  location === "/user-dashboard" ||
+                  location === "/rider-dashboard" ||
+                  location === "/resturant-dashboard"
                     ? "border-white"
                     : "border-(--primary)"
                 }`}

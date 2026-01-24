@@ -17,6 +17,8 @@ import { useState, useEffect } from "react";
 import Landing from "./pages/Landing";
 import Lenis from "lenis";
 import { useAuth } from "./context/AuthContext";
+import ResturantDashboard from './pages/dashboards/ResturantDashboard';
+import RiderDashboard from './pages/dashboards/RiderDashboard';
 
 const paths = ["/user-dashboard"];
 
@@ -71,9 +73,20 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/user-dashboard" element={<UserDashboard />} />
+        <Route path="/profile" element={user ? <Profile /> : <Login />} />
+        <Route path="/cart" element={user ? <Cart /> : <Login />} />
+        <Route
+          path="/user-dashboard"
+          element={user ? <UserDashboard /> : <Login />}
+        />
+         <Route
+          path="/rider-dashboard"
+          element={user ? <RiderDashboard /> : <Login />}
+        />
+         <Route
+          path="/resturant-dashboard"
+          element={user ? <ResturantDashboard /> : <Login />}
+        />
       </Routes>
       <Toaster />
     </div>
