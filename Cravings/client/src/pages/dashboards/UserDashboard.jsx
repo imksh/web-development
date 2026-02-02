@@ -8,10 +8,16 @@ import UserHealpdesk from "../../components/userDashboard/UserHealpdesk";
 import { motion, AnimatePresence } from "motion/react";
 import useWindowSize from "../../hooks/useWindowSize";
 import UserTopBar from "../../components/userDashboard/UserTopBar";
+import { useAuth } from "../../context/AuthContext";
+import Lottie from "lottie-react";
+import UnauthorizedLottie from "../../assets/animations/unauthorized.json";
+import { toast } from "react-hot-toast";
+import api from "../../config/Api";
 
 const UserDashboard = () => {
   const [active, setActive] = useState("overview");
   const [show, setShow] = useState(false);
+  const { user, role, setUser, setIsLogin } = useAuth();
   const [contentWidth, setContentWidth] = useState(0);
   const size = useWindowSize();
   const sideBarRef = useRef(null);
@@ -21,6 +27,41 @@ const UserDashboard = () => {
     setContentWidth(size.width - rect.width);
   }, [size.width]);
 
+  const handleLogout = async () => {
+    try {
+      const res = await api.get("/auth/logout");
+      toast.success(res.data.message);
+      setUser("");
+      setIsLogin(false);
+      sessionStorage.removeItem("CravingUser");
+    } catch (error) {
+      console.log("Error in logout: ", error);
+      toast.error(error?.response?.data?.message || "Unknown Error");
+    }
+  };
+
+  if (role != "customer") {
+    return (
+      <div className="w-[85%] mx-auto min-h-[87dvh] flex justify-center items-center flex-col gap-5">
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <Lottie animationData={UnauthorizedLottie} className="w-60 sm:w-80" />
+        </motion.div>
+        <h2>
+          <span className="font-bold text-xl text-(--primary)">Hii {user.name},</span> <br />
+          You are not logged in as Customer. Please login as customer to access
+          Customer Dashboard
+        </h2>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="px-6 py-3 bg-red-500 text-white hover:bg-red-700 cursor-pointer rounded-lg"
+          onClick={handleLogout}
+        >
+          Logout
+        </motion.button>
+      </div>
+    );
+  }
   return (
     <div
       ref={sideBarRef}

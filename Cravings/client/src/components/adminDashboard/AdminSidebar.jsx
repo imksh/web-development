@@ -20,7 +20,7 @@ const data = [
   { key: "help", icon: RiCustomerService2Fill, name: "Help Desk" },
 ];
 
-const UserSidebar = ({ active, setActive, show }) => {
+const AdminSidebar = ({ active, setActive, show }) => {
   const [curr, setCurr] = useState("");
   const { setUser, setIsLogin } = useAuth();
 
@@ -36,7 +36,7 @@ const UserSidebar = ({ active, setActive, show }) => {
       toast.success(res.data.message);
       setUser("");
       setIsLogin(false);
-      sessionStorage.removeItem("CravingUser");
+      sessionStorage.removeItem("CravingAdmin");
     } catch (error) {
       console.log("Error in logout: ", error);
       toast.error(error?.response?.data?.message || "Unknown Error");
@@ -67,7 +67,7 @@ const UserSidebar = ({ active, setActive, show }) => {
           alt="dashboard image"
           className=" h-8 w-auto"
         />{" "}
-        {show && <span className="whitespace-nowrap">User Dashboard</span>}
+        {show && <span className="whitespace-nowrap">Admin Dashboard</span>}
       </motion.div>
 
       <div className="flex flex-col  ">
@@ -130,4 +130,4 @@ const UserSidebar = ({ active, setActive, show }) => {
   );
 };
 
-export default UserSidebar;
+export default AdminSidebar;

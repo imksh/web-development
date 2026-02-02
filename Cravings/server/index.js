@@ -1,16 +1,13 @@
-//dotenv
-import dotenv from "dotenv";
-dotenv.config();
-
 //package import
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import cookieParser  from 'cookie-parser';
+import cookieParser from "cookie-parser";
 import connectDB from "./src/config/db.js";
+import cloudinary from "./src/config/cloudinary.js";
 import authRouter from "./src/routers/auth.route.js";
 import publicRouter from "./src/routers/public.route.js";
-import userRouter from "./src/routers/user.route.js"
+import userRouter from "./src/routers/user.route.js";
 
 const app = express();
 
@@ -52,7 +49,13 @@ app.use((err, req, res, next) => {
 //port
 const port = process.env.PORT || 4500;
 
-app.listen(port, () => {
-  connectDB();
+app.listen(port, async () => {
   console.log("Server is started at: ", port);
+  connectDB();
+  // try {
+  //   const res = await cloudinary.api.ping();
+  //   console.log("Cloudinary api is working ", res);
+  // } catch (error) {
+  //   console.error("Error in connecting cloudinary api", error);
+  // }
 });

@@ -19,6 +19,7 @@ import Lenis from "lenis";
 import { useAuth } from "./context/AuthContext";
 import ResturantDashboard from './pages/dashboards/ResturantDashboard';
 import RiderDashboard from './pages/dashboards/RiderDashboard';
+import AdminDashboard from './pages/dashboards/AdminDashboard';
 
 const paths = ["/user-dashboard"];
 
@@ -86,6 +87,10 @@ const App = () => {
          <Route
           path="/resturant-dashboard"
           element={user ? <ResturantDashboard /> : <Login />}
+        />
+         <Route
+          path="/admin-dashboard"
+          element={user ? <AdminDashboard /> : <Login />}
         />
       </Routes>
       <Toaster />
