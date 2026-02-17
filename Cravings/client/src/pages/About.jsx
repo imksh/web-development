@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const About = () => {
   return (
-    <div className="px-[7.5%] pt-20 overflow-x-hidden">
+    <div className="px-[7.5%] pt-[20dvh] overflow-x-hidden">
       {/* Hero */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}

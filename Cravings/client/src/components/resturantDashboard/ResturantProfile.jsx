@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { useAuth } from "../../context/AuthContext";
-import EditProfileModal from "./modals/EditProfileModal";
 import { FaCamera } from "react-icons/fa";
 import { toast } from "react-hot-toast";
 import api from "../../config/Api";
+import EditRestaurantProfileModal from './modals/EditRestaurantProfileModal';
 
 const ResturantProfile = () => {
   const { user, setUser, setIsLogin } = useAuth();
@@ -166,7 +166,7 @@ const ResturantProfile = () => {
       </div>
 
       {isEditProfileModalOpen && (
-        <EditProfileModal
+        <EditRestaurantProfileModal
           onClose={() => setIsEditProfileModalOpen(false)}
         />
       )}

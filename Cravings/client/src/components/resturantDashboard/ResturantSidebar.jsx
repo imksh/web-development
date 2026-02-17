@@ -11,11 +11,13 @@ import { CiLogout } from "react-icons/ci";
 import { toast } from "react-hot-toast";
 import api from "../../config/Api";
 import { useAuth } from "../../context/AuthContext";
+import { CgMenuBoxed } from "react-icons/cg";
+
 
 const data = [
   { key: "overview", icon: TbChartTreemap, name: "Overview" },
   { key: "profile", icon: ImProfile, name: "Profile" },
-  { key: "orders", icon: FaCartShopping, name: "Orders" },
+  { key: "menu", icon: CgMenuBoxed, name: "Menu" },
   { key: "transactions", icon: TbTransactionRupee, name: "Transactions" },
   { key: "help", icon: RiCustomerService2Fill, name: "Help Desk" },
 ];

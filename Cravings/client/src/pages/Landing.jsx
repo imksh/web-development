@@ -25,6 +25,7 @@ import Footer from "../components/Footer";
 import LandingFood from "../components/LandingFood";
 import Testimonials from "../components/Testimonials";
 import useWindowSize from "../hooks/useWindowSize";
+import { useNavigate } from "react-router-dom";
 
 const menuItem = [
   // ---------------- BREAKFAST ----------------
@@ -199,6 +200,7 @@ const menuItem = [
 const menuTabs = ["Breakfast", "Lunch", "Dinner", "Desserts"];
 
 const Landing = () => {
+  const navigate = useNavigate();
   const size = useWindowSize();
   const [search, setSearch] = useState("");
   const [curr, setCurr] = useState("");
@@ -216,7 +218,7 @@ const Landing = () => {
   }, [curr]);
 
   return (
-    <div className="overflow-auto hide-scrollbar">
+    <div className="overflow-auto hide-scrollbar pt-[20dvh]">
       {/* Hero Section */}
       <div className="px-[7.5%] gap-8 sm:gap-0  grid grid-cols-1 sm:grid-cols-2 justify-between items-center min-h-[85dvh]">
         <motion.div
@@ -276,6 +278,7 @@ const Landing = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 1 }}
               className="bg-(--primary) text-white p-4 md:px-10 rounded-xl hover:bg-(--accent) cursor-pointer"
+              onClick={() => navigate("/restaurants")}
             >
               Get Started
             </motion.button>
@@ -561,8 +564,8 @@ const Landing = () => {
               Get the Best promos order now before the ran out!
             </h2>
             <p className="text-gray-300 text-[12px] my-2">
-              Get the best promos from us just for you and we always{" "}
-              provide the best service for you. Order no at Cravings
+              Get the best promos from us just for you and we always provide the
+              best service for you. Order no at Cravings
             </p>
           </div>
           <img

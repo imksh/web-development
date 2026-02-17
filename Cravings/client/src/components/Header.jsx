@@ -59,8 +59,8 @@ const Header = () => {
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, ease: "easeInOut" }}
-      className={`fixed top-0 left-0 w-full z-99 min-h-[13dvh] flex flex-col justify-end   header-gradient transition-transform duration-300 ease-in-out ${
-        showHeader ? "translate-y-0" : "-translate-y-full"
+      className={`fixed top-0 left-0 w-full z-99 min-h-[13dvh] flex flex-col justify-end   bg-transparent transition-transform duration-500 ease-in-out ${
+        showHeader ? "translate-y-0" : "-translate-y-[110%]"
       }`}
     >
       <div className={`w-fit absolute -top-2.5 left-[8.5vw] ride-x`}>

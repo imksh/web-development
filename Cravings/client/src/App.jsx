@@ -17,53 +17,42 @@ import { useState, useEffect } from "react";
 import Landing from "./pages/Landing";
 import Lenis from "lenis";
 import { useAuth } from "./context/AuthContext";
-import ResturantDashboard from './pages/dashboards/ResturantDashboard';
-import RiderDashboard from './pages/dashboards/RiderDashboard';
-import AdminDashboard from './pages/dashboards/AdminDashboard';
-
-const paths = ["/user-dashboard"];
+import ResturantDashboard from "./pages/dashboards/ResturantDashboard";
+import RiderDashboard from "./pages/dashboards/RiderDashboard";
+import AdminDashboard from "./pages/dashboards/AdminDashboard";
+import RestaurantMenu from "./pages/RestaurantMenu";
+import Restaurants from "./pages/Restaurants";
+import MenuItemPage from "./pages/MenuItemPage";
+import CartPopup from "./components/CartPopup";
 
 const App = () => {
   const { user, isLogin } = useAuth();
   const size = useWindowSize();
-  const location = useLocation().pathname;
-  const [margint, setMarginT] = useState("");
 
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-      smooth: true,
-      smoothTouch: false,
-    });
+  // useEffect(() => {
+  //   const lenis = new Lenis({
+  //     duration: 1.2,
+  //     easing: (t) => 1 - Math.pow(1 - t, 3),
+  //     smooth: true,
+  //     smoothTouch: false,
+  //   });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+  //   function raf(time) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
 
-    requestAnimationFrame(raf);
+  //   requestAnimationFrame(raf);
 
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
-  useEffect(() => {
-    const flag = paths.includes(location);
-    if (flag) {
-      setMarginT("");
-    } else {
-      setMarginT("mt-[10dvh]");
-    }
-  }, [location]);
+  //   return () => {
+  //     lenis.destroy();
+  //   };
+  // }, []);
 
   return (
     <div
-      className={`bg-gradient  overflow-x-hidden  ${
-        size.width < 645 && user
-          ? `mb-[10dvh] ${margint ? ` h-[90dvh]` : "h-[90dvh]"} `
-          : "pt-[13dvh] min-h-dvh"
+      className={` overflow-x-hidden bg-slate-50  ${
+        size.width < 645 && user ? `mb-[10dvh]  ` : " min-h-dvh"
       }`}
     >
       {size.width < 645 && user && <PhoneTopBar />}
@@ -76,23 +65,29 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/profile" element={user ? <Profile /> : <Login />} />
         <Route path="/cart" element={user ? <Cart /> : <Login />} />
+        <Route path="/restaurants" element={<Restaurants />} />
+        <Route path="/restaurant/menu" element={<RestaurantMenu />} />
+        <Route path="/menu/:id" element={<MenuItemPage />} />
+        <Route path="/cart" element={<Cart />} />
         <Route
           path="/user-dashboard"
           element={user ? <UserDashboard /> : <Login />}
         />
-         <Route
+        <Route
           path="/rider-dashboard"
           element={user ? <RiderDashboard /> : <Login />}
         />
-         <Route
+        <Route
           path="/resturant-dashboard"
           element={user ? <ResturantDashboard /> : <Login />}
         />
-         <Route
+        <Route
           path="/admin-dashboard"
           element={user ? <AdminDashboard /> : <Login />}
         />
       </Routes>
+
+      <CartPopup />
       <Toaster />
     </div>
   );

@@ -57,7 +57,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col  items-center justify-center h-full min-h-[90dvh]  w-full py-8 hide-scrollbar">
+    <div className="flex flex-col  items-center justify-center h-full min-h-[90dvh]  w-full py-8 hide-scrollbar pt-[20dvh]">
       <img src={transparentLogo} className="w-30" />
       <p className="my-5"></p>
       <form

@@ -13,6 +13,7 @@ import Lottie from "lottie-react";
 import UnauthorizedLottie from "../../assets/animations/unauthorized.json";
 import { toast } from "react-hot-toast";
 import api from "../../config/Api";
+import ResturantMenu from "../../components/resturantDashboard/ResturantMenu";
 
 const ResturantDashboard = () => {
   const [active, setActive] = useState("overview");
@@ -37,9 +38,7 @@ const ResturantDashboard = () => {
       setIsLogin(false);
       sessionStorage.removeItem("CravingUser");
     } catch (error) {
-      toast.error(
-        error?.response?.data?.message || "Logout failed"
-      );
+      toast.error(error?.response?.data?.message || "Logout failed");
     }
   };
 
@@ -48,10 +47,7 @@ const ResturantDashboard = () => {
     return (
       <div className="w-[85%] mx-auto min-h-[87dvh] flex justify-center items-center flex-col gap-5">
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <Lottie
-            animationData={UnauthorizedLottie}
-            className="w-60 sm:w-80"
-          />
+          <Lottie animationData={UnauthorizedLottie} className="w-60 sm:w-80" />
         </motion.div>
 
         <h2 className="text-center">
@@ -90,7 +86,7 @@ const ResturantDashboard = () => {
             initial={{ width: "5%" }}
             whileHover={{ width: "20%" }}
             transition={{ duration: 0.4 }}
-            className="shadow-lg fixed h-full min-w-[70px] z-50 shrink-0 hide-scrollbar border-r border-slate-300 header-gradient overflow-hidden"
+            className="shadow-lg fixed h-full min-w-[70px] z-50 shrink-0 hide-scrollbar border-r border-slate-300 bg-slate-50 overflow-hidden"
             onMouseEnter={() => setShow(true)}
             onMouseLeave={() => setShow(false)}
           >
@@ -102,18 +98,14 @@ const ResturantDashboard = () => {
           </motion.div>
         </AnimatePresence>
       ) : (
-        <ResturantTopBar
-          active={active}
-          setActive={setActive}
-          show={show}
-        />
+        <ResturantTopBar active={active} setActive={setActive} show={show} />
       )}
 
       {/* MAIN CONTENT */}
       <div className="w-full sm:w-[95%] ml-auto overflow-y-auto">
         {active === "overview" && <ResturantOverview />}
         {active === "profile" && <ResturantProfile />}
-        {active === "orders" && <ResturantOrders />}
+        {active === "menu" && <ResturantMenu />}
         {active === "transactions" && <ResturantTranscation />}
         {active === "help" && <ResturantHealpdesk />}
       </div>

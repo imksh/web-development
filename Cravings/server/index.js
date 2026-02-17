@@ -8,6 +8,7 @@ import cloudinary from "./src/config/cloudinary.js";
 import authRouter from "./src/routers/auth.route.js";
 import publicRouter from "./src/routers/public.route.js";
 import userRouter from "./src/routers/user.route.js";
+import restaurantRouter from "./src/routers/restaurant.route.js"
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(morgan("dev"));
 app.use("/public", publicRouter);
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
+app.use("/user", restaurantRouter);
 
 //home route
 app.get("/", (req, res) => {
